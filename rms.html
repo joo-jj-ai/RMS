@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - User Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard - User Management</h1>
+
+        <!-- User Registration -->
+        <section id="register">
+            <h2>Register User</h2>
+            <form id="registerForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required><br>
+
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="text" id="mobileNumber" required><br>
+
+                <label for="rationCardNumber">Ration Card Number:</label>
+                <input type="text" id="rationCardNumber" required><br>
+
+                <button type="submit">Register User</button>
+            </form>
+        </section>
+
+        <!-- Get User by Ration Card -->
+        <section id="getUser">
+            <h2>Get User by Ration Card Number</h2>
+            <form id="getUserForm">
+                <label for="searchRationCardNumber">Ration Card Number:</label>
+                <input type="text" id="searchRationCardNumber" required><br>
+
+                <button type="submit">Get User</button>
+            </form>
+            <div id="userDetails"></div>
+        </section>
+
+        <!-- Deactivate User -->
+        <section id="deactivateUser">
+            <h2>Deactivate User</h2>
+            <form id="deactivateForm">
+                <label for="deactivateUserId">User ID:</label>
+                <input type="number" id="deactivateUserId" required><br>
+
+                <button type="submit">Deactivate User</button>
+            </form>
+        </section>
+
+        <!-- Stock Management -->
+        <section id="stockManagement">
+            <h2>Stock Management</h2>
+            <form id="addStockForm">
+                <label for="itemName">Item Name:</label>
+                <input type="text" id="itemName" required><br>
+
+                <label for="availableQuantity">Available Quantity:</label>
+                <input type="number" id="availableQuantity" required><br>
+
+                <label for="pricePerUnit">Price Per Unit:</label>
+                <input type="number" id="pricePerUnit" required><br>
+
+                <button type="submit">Add Stock</button>
+            </form>
+            <br>
+
+            <form id="getStockForm">
+                <label for="searchItemName">Item Name:</label>
+                <input type="text" id="searchItemName" required><br>
+
+                <button type="submit">Get Stock</button>
+            </form>
+            <div id="stockDetails"></div>
+
+        <!-- View All Stocks -->
+        <div id="viewAllStocksSection">
+            <h2>All Stocks</h2>
+            <button id="viewAllStocksButton">View All Stocks</button>
+            <div id="allStocksList" class="card-container"></div>
+        </div>
+        </section>
+
+        
+        <!-- Section to add a new policy -->
+        <section id="add-policy-section" class="section-container">
+            <div class="section-header">
+                <h2>Add New Policy</h2>
+             </div>
+            <form id="add-policy-form">
+                <label for="title">Title</label>
+                <input type="text" id="title" required>
+                <label for="description">Description</label>
+                <textarea id="description" required></textarea>
+                <label for="effectiveDate">Effective Date</label>
+                <input type="date" id="effectiveDate" required>
+                <label for="status">Status</label>
+
+                <select id="status" required>
+                    <option value="ACTIVE">ACTIVE</option>
+                    <option value="INACTIVE">INACTIVE</option>
+                    <option value="UPDATED">UPDATED</option>
+                 </select>
+        
+                <button type="submit">Add Policy</button>
+            </form>
+        </section>
+        
+        <!-- Section to view all policies -->
+        <section id="policies-section" class="section-container">
+            <div class="section-header">
+                 <h2>All Policies</h2>
+            </div>
+             <div class="cards-container" id="policy-cards">
+                 <!-- Dynamic policy cards will be injected here -->
+            </div>
+        </section>
+        
+           <!-- </main> -->
+
+        <!-- Ration Request Management -->
+        <section id="rationRequestManagement">
+            <h2>Create Ration Request</h2>
+            <form id="createRequestForm">
+                <label for="userRationCardNumber">User Ration Card Number:</label>
+                <input type="text" id="userRationCardNumber" required><br>
+
+                <label for="requestQuantity">Requested Quantity:</label>
+                <input type="number" id="requestQuantity" required><br>
+
+                <label for="stockItemName">Stock Item Name:</label>
+                <input type="text" id="stockItemName" required><br>
+
+                <button type="submit">Create Ration Request</button>
+            </form>
+            <br>
+
+            <form id="approveRejectRequestForm">
+                <label for="requestId">Request ID:</label>
+                <input type="number" id="requestId" required><br>
+
+                <label for="comment">Comment:</label>
+                <textarea id="comment" required></textarea><br>
+
+                <button type="submit">Approve/Reject Request</button>
+            </form>
+        </section>
+
+        <!-- Grievance Management -->
+        <section id="grievanceManagement">
+            <h2>Create Grievance</h2>
+            <form id="createGrievanceForm">
+                <label for="userRationCard">User Ration Card Number:</label>
+                <input type="text" id="userRationCard" required><br>
+
+                <label for="description">Grievance Description:</label>
+                <textarea id="description" required></textarea><br>
+
+                <button type="submit">Create Grievance</button>
+            </form>
+            <br>
+
+            <form id="resolveGrievanceForm">
+                <label for="grievanceId">Grievance ID:</label>
+                <input type="number" id="grievanceId" required><br>
+
+                <label for="grievanceResponse">Response:</label>
+                <textarea id="grievanceResponse" required></textarea><br>
+
+                <button type="submit">Resolve Grievance</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
